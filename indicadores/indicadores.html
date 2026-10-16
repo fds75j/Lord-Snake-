@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicadores | B.A.S. — Bitcoin Advanced Strategy</title>
+    <meta name="description" content="PrkTM☆ Dynamic: el indicador principal del protocolo B.A.S. RSI dinámico intrabar con SMA de High/Low para lectura de mercado en tiempo real.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page-indicadores">
+
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <div class="container nav">
+            <div class="logo">B.A.S.</div>
+            <ul class="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../estrategias/estrategias.html">Estrategias</a></li>
+                <li><a href="../herramientas/herramientas.html">Herramientas</a></li>
+                <li><a href="../blog/blog.html">Blog</a></li>
+                <li><a href="../otrasinversiones/otrasinversiones.html">Otras Inversiones</a></li>
+                <li><a href="../contacto/contacto.html">Contacto</a></li>
+                <li><a href="../sobre-mi/sobre-mi.html">Sobre mí</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ==================== HERO CON FONDO ==================== -->
+    <section class="hero-indicators">
+
+        <div class="hero-indicators-overlay"></div>
+
+        <div class="container hero-indicators-content">
+
+            <span class="badge">📊 Indicador Principal</span>
+
+            <h1>PrkTM☆ DYNAMIC</h1>
+            <h2>RSI Dinámico Intrabar · Pine Script v6</h2>
+
+            <p class="lead" style="max-width: 780px; margin: 0 auto 40px; text-align: center;">
+                El indicador que alimenta la lectura de mercado del protocolo B.A.S.
+                Un RSI que <strong>no espera al cierre de la vela</strong>: se recalcula
+                en cada tick, en tiempo real, sustituyendo el High y el Low por el
+                precio actual. Diseñado para operar en <strong>4H y 1D</strong>.
+            </p>
+
+            <div class="hero-buttons" style="justify-content:center;">
+                <a href="#codigo" class="btn btn-primary">Ver Código Pine</a>
+                <a href="#logica" class="btn btn-secondary">Entender la Lógica</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==================== FICHA TÉCNICA ==================== -->
+    <section>
+        <div class="container">
+
+            <h2 class="section-title">Ficha Técnica</h2>
+
+            <div class="specs-grid">
+
+                <div class="spec">
+                    <span class="spec-label">Nombre</span>
+                    <span class="spec-value">PrkTM☆ Dynamic</span>
+                </div>
+
+                <div class="spec">
+                    <span class="spec-label">Short Title</span>
+                    <span class="spec-value">PrkTM☆</span>
+                </div>
+
+                <div class="spec">
+                    <span class="spec-label">Versión</span>
+                    <span class="spec-value">Pine v6</span>
+                </div>
+
+                <div class="spec">
+                    <span class="spec-label">Tipo</span>
+                    <span class="spec-value">RSI Adaptativo</span>
+                </div>
+
+                <div class="spec">
+                    <span class="spec-label">Periodo RSI</span>
+                    <span class="spec-value">9 (configurable)</span>
+                </div>
+
+                <div class="spec">
+                    <span class="spec-label">Periodo SMA</span>
+                    <span class="spec-value">9 (configurable)</span>
+                </div>
+
+                <div class="spec">
+                    <span class="spec-label">Overlay</span>
+                    <span class="spec-value">No (panel inferior)</span>
+                </div>
+
+                <div class="spec">
+                    <span class="spec-label">Uso Principal</span>
+                    <span class="spec-value">Filtro de tendencia</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== VISUAL DEL INDICADOR ==================== -->
+    <section>
+        <div class="container">
+
+            <h2 class="section-title">Cómo se ve en el gráfico</h2>
+
+            <div class="platform-visual">
+                <img src="../assets/img/nasdaq.png"
+                     alt="PrkTM Dynamic — Contexto de mercado institucional"
+                     class="platform-image indicator-image">
+            </div>
+
+            <p class="note">
+                El indicador se representa en un panel inferior con tres líneas:
+                <strong style="color:#ff4d4d;">RSI High (rojo)</strong>,
+                <strong style="color:#00C853;">RSI Low (verde)</strong> y
+                <strong style="color:#FFD700;">SMA L/H (amarillo)</strong>.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- ==================== LÓGICA DEL INDICADOR ==================== -->
+    <section id="logica">
+        <div class="container">
+
+            <h2 class="section-title">La Lógica del Indicador</h2>
+
+            <p class="lead">
+                La clave del <strong>PrkTM☆ Dynamic</strong> está en cómo trata las
+                velas en tiempo real. Mientras el RSI tradicional usa siempre el
+                High y el Low de la vela, este indicador <strong>los sustituye por
+                el precio actual (close) cuando la vela está viva</strong>. El resultado:
+                tres líneas que reaccionan al instante, sin esperar al cierre.
+            </p>
+
+            <h4 class="sub-title">Comportamiento en Tiempo Real</h4>
+
+            <div class="steps">
+
+                <div class="step">
+                    <span class="step-num">01</span>
+                    <p>
+                        <strong>En vela REALTIME</strong>: el dato actual de la serie
+                        <code>High</code> se sustituye por <code>close</code>.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">02</span>
+                    <p>
+                        <strong>En vela REALTIME</strong>: el dato actual de la serie
+                        <code>Low</code> también se sustituye por <code>close</code>.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">03</span>
+                    <p>
+                        Como <code>close</code> es el precio en cada tick, las líneas
+                        <strong>roja y verde se recalculan continuamente</strong>:
+                        subida, bajada o rebote actualizan al instante.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <span class="step-num">04</span>
+                    <p>
+                        <strong>En velas históricas</strong> se conserva la lógica
+                        original del RSI: <code>RSI(high)</code> y <code>RSI(low)</code>.
+                    </p>
+                </div>
+
+            </div>
+
+            <h4 class="sub-title">Las Tres Líneas</h4>
+
+            <div class="cards cards-small">
+
+                <div class="card">
+                    <h3 style="color:#ff4d4d;">🔴 RSI High</h3>
+                    <p>
+                        RSI calculado sobre el <strong>High</strong> (o el close en
+                        vela viva). Representa la presión de compra en el extremo
+                        superior de cada vela.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 style="color:#00C853;">🟢 RSI Low</h3>
+                    <p>
+                        RSI calculado sobre el <strong>Low</strong> (o el close en
+                        vela viva). Representa la presión de venta en el extremo
+                        inferior de cada vela.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 style="color:#FFD700;">🟡 SMA L/H</h3>
+                    <p>
+                        Media móvil simple entre el RSI High y el RSI Low
+                        (50% / 50%). Es la línea de referencia que se usa como
+                        <strong>filtro de tendencia</strong> dentro de B.A.S.
+                    </p>
+                </div>
+
+            </div>
+
+            <h4 class="sub-title">Niveles Clave</h4>
+
+            <div class="fib-grid">
+
+                <div class="fib-item">
+                    <span class="fib-level" style="color:#ff4d4d;">85</span>
+                    <span class="fib-bullets">Sobrecompra</span>
+                </div>
+
+                <div class="fib-item">
+                    <span class="fib-level" style="color:#ffffff;">50</span>
+                    <span class="fib-bullets">Nivel Medio</span>
+                </div>
+
+                <div class="fib-item">
+                    <span class="fib-level" style="color:#00C853;">15</span>
+                    <span class="fib-bullets">Sobreventa</span>
+                </div>
+
+            </div>
+
+            <p class="note">
+                La SMA amarilla cruzando al alza el nivel 50 suele confirmar tendencia
+                alcista. Cruzando a la baja, tendencia bajista. El indicador nunca
+                decide por ti: <strong>filtra</strong>.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- ==================== CÓDIGO PINE ==================== -->
+    <section id="codigo">
+        <div class="container">
+
+            <h2 class="section-title">Código Pine Script v6</h2>
+
+            <p class="lead">
+                Copia y pega este código directamente en el editor Pine de
+                <a href="https://www.tradingview.com/pine-editor/" target="_blank" rel="noopener"
+                   style="color: var(--cyber); text-decoration: underline;">
+                   TradingView
+                </a>
+                para tener el indicador funcionando en tu gráfico.
+            </p>
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span class="code-dot code-dot-red"></span>
+                    <span class="code-dot code-dot-yellow"></span>
+                    <span class="code-dot code-dot-green"></span>
+                    <span class="code-title">PrkTM☆ Dynamic · Pine v6</span>
+                    <button class="code-copy" onclick="copyCode(this)">Copiar</button>
+                </div>
+
+<pre class="code-content"><code>//@version=6
+indicator(title="PrkTM☆ Dynamic", shorttitle="PrkTM☆", overlay=false)
+
+// Parámetros
+rsi_period = input.int(9, title="Periodo del RSI", minval=1)
+sma_period = input.int(9, title="Periodo de la SMA", minval=1)
+
+// ============================================================
+// PRKTM DINÁMICO INTRABAR
+// ============================================================
+// En una vela REALTIME:
+//   - el dato actual de la serie High se sustituye por close
+//   - el dato actual de la serie Low  se sustituye por close
+//
+// close = precio actual en cada tick de la vela.
+//
+// Por tanto, rojo y verde se recalculan continuamente:
+// subida → actualizan
+// bajada → actualizan
+// rebote → actualizan
+// sin esperar al cierre.
+//
+// En velas históricas se conserva la lógica original:
+// RSI(high) y RSI(low).
+// ============================================================
+
+float highSource = barstate.isrealtime ? close : high
+float lowSource  = barstate.isrealtime ? close : low
+
+// RSI High dinámico
+float rsi_high = ta.rsi(highSource, rsi_period)
+
+// RSI Low dinámico
+float rsi_low = ta.rsi(lowSource, rsi_period)
+
+// ============================================================
+// AMARILLA — SIN CAMBIOS EN SU LÓGICA
+// ============================================================
+
+float sma_rsi_high = ta.sma(rsi_high, sma_period)
+float sma_rsi_low  = ta.sma(rsi_low, sma_period)
+
+float rsi_sma_lh = (sma_rsi_high * 0.5) + (sma_rsi_low * 0.5)
+
+// ============================================================
+// GRÁFICOS
+// ============================================================
+
+plot(rsi_high, title="RSI High", color=color.red, linewidth=1)
+plot(rsi_low, title="RSI Low", color=color.green, linewidth=1)
+plot(rsi_sma_lh, title="RSI SMA L/H", color=color.yellow, linewidth=2)
+
+// ============================================================
+// NIVELES
+// ============================================================
+
+hline(85, "Sobrecompra", color=color.red, linewidth=2)
+hline(50, "Nivel Medio", color=color.white, linewidth=2)
+hline(15, "Sobreventa", color=color.green, linewidth=2)</code></pre>
+
+            </div>
+
+            <p class="note" style="margin-top: 30px;">
+                El indicador es <strong>open source</strong>. Puedes copiarlo,
+                modificarlo y adaptarlo a tu operativa.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- ==================== CÓMO USARLO ==================== -->
+    <section>
+        <div class="container">
+
+            <h2 class="section-title">Cómo se usa en B.A.S.</h2>
+
+            <p class="lead">
+                El PrkTM☆ Dynamic no es un indicador de entrada directa. Es el
+                <strong>filtro de tendencia</strong> que determina si el protocolo
+                permite abrir longs, shorts o quedarse fuera.
+            </p>
+
+            <div class="split">
+
+                <div class="split-item split-a">
+                    <h4>LONGS PERMITIDOS</h4>
+                    <ul class="split-list">
+                        <li>Tendencia principal en 1D <strong>alcista</strong>.</li>
+                        <li>PrkTM☆ Dynamic <strong>alcista</strong> (SMA amarilla sobre 50).</li>
+                    </ul>
+                </div>
+
+                <div class="split-item split-b">
+                    <h4>SHORTS PERMITIDOS</h4>
+                    <ul class="split-list">
+                        <li>Tendencia principal en 1D <strong>bajista</strong>.</li>
+                        <li>PrkTM☆ Dynamic <strong>bajista</strong> (SMA amarilla bajo 50).</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="highlight-box" style="margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                <h4>Regla del protocolo</h4>
+                <p>
+                    Si el PrkTM☆ Dynamic no confirma la dirección de la tendencia
+                    principal, <strong>no se opera</strong>. Sin excepciones.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Explora el resto del protocolo</h2>
+
+            <div class="hero-buttons" style="justify-content:center; flex-wrap: wrap;">
+                <a href="../estrategias/estrategias.html" class="btn btn-primary">Ver Estrategias</a>
+                <a href="../herramientas/herramientas.html" class="btn btn-secondary">Ver Herramientas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Lord Snake — B.A.S. Bitcoin Advanced Strategy.</p>
+            <p>
+                Este sitio describe un protocolo operativo con fines educativos e
+                informativos. No constituye asesoramiento financiero, fiscal ni legal.
+                Cada usuario es responsable de sus propias decisiones.
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+
+    <script>
+        function copyCode(btn) {
+            const code = btn.closest('.code-block').querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const original = btn.innerText;
+                btn.innerText = '¡Copiado!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerText = original;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
