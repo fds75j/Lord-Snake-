@@ -2543,3 +2543,39 @@ code {
 .contact-card:hover .contact-icon {
     transform: scale(1.1);
 }
+
+/* ============================================================
+   ARREGLO PARA MÓVIL: CAJA DE DONACIONES Y QR
+   ============================================================ */
+
+/* 1. Evitar que la dirección de la wallet rompa la pantalla */
+.donation-code {
+    word-break: break-all !important; /* Fuerza el corte de la palabra larga */
+    white-space: normal !important;   /* Permite que salte de línea */
+    max-width: 100%;                  /* No deja que se salga del contenedor */
+    display: block;
+}
+
+/* 2. Asegurar que el contenedor de la donación no se desborde */
+.donation-wrapper {
+    max-width: 100%;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* 3. Ajustar la caja de la dirección en sí */
+.donation-address {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 4. En móvil, centrar un poco el texto para que quede más limpio */
+@media (max-width: 800px) {
+    .donation-address {
+        text-align: center;
+    }
+    
+    .donation-code {
+        text-align: center;
+        font-size: 0.75rem; /* Letra un pelín más pequeña en móvil para que quepa mejor */
+    }
+}
