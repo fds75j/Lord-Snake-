@@ -2634,3 +2634,69 @@ code {
         font-size: 0.7rem;
     }
 }
+
+@media (max-width: 800px) {
+    /* 1. Forzar que sea de 1 sola columna (uno encima de otro) */
+    .donation-wrapper {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none; /* Anulamos el grid de 2 columnas */
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    /* 2. Centrar el QR y que no ocupe todo el ancho */
+    .donation-qr {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el QR horizontalmente */
+    }
+
+    .qr-image {
+        max-width: 200px; /* El QR se hace más pequeño en móvil */
+        margin: 0 auto;
+    }
+
+    /* 3. El texto ocupa el 100% del ancho */
+    .donation-info {
+        width: 100%;
+        text-align: center; /* Centramos todo el texto */
+    }
+
+    /* 4. El badge de "Invitame a un café" se centra */
+    .donation-info .badge {
+        align-self: center;
+        margin-bottom: 10px;
+    }
+
+    /* 5. Los detalles (Moneda/Red) se apilan en una columna */
+    .donation-details {
+        grid-template-columns: 1fr;
+    }
+
+    /* 6. La dirección se ajusta */
+    .donation-address {
+        text-align: left; /* El texto de la wallet mejor a la izquierda para copiar */
+        margin-top: 15px;
+    }
+    
+    .donation-code {
+        word-break: break-all !important;
+        text-align: center;
+    }
+
+    /* 7. El botón de copiar ocupa todo el ancho para que sea fácil de pulsar */
+    .copy-btn {
+        width: 100%;
+        margin-top: 10px;
+        align-self: center;
+    }
+    
+    /* 8. El aviso naranja se centra */
+    .donation-warning {
+        text-align: center;
+        border-left: none;
+        border-top: 3px solid var(--btc);
+    }
+}
