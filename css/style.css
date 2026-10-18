@@ -2486,3 +2486,60 @@ code {
         display: none; /* Ocultamos la línea en móvil */
     }
 }
+
+/* ============================================================
+   ICONOS DE CONTACTO SVG
+   ============================================================ */
+
+.contact-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0; /* Ocultamos cualquier texto que quede */
+    margin-bottom: 15px;
+    transition: all var(--transition);
+    border: 2px solid transparent;
+}
+
+/* Ajustamos los colores de fondo y bordes para cada red */
+.contact-icon-email {
+    background: rgba(247,147,26,.1);
+    border-color: var(--btc);
+    color: var(--btc); /* El SVG usa currentColor */
+}
+.contact-card:hover .contact-icon-email { box-shadow: 0 0 25px rgba(247,147,26,.4); }
+
+.contact-icon-x {
+    background: rgba(255,255,255,.05);
+    border-color: #ffffff;
+    color: #ffffff;
+}
+.contact-card:hover .contact-icon-x { box-shadow: 0 0 25px rgba(255,255,255,.3); }
+
+.contact-icon-reddit {
+    background: rgba(255,69,0,.1);
+    border-color: #FF4500;
+    color: #FF4500;
+}
+.contact-card:hover .contact-icon-reddit { box-shadow: 0 0 25px rgba(255,69,0,.4); }
+
+.contact-icon-telegram {
+    background: rgba(0,136,204,.1);
+    border-color: #0088CC;
+    color: #0088CC;
+}
+.contact-card:hover .contact-icon-telegram { box-shadow: 0 0 25px rgba(0,136,204,.4); }
+
+.contact-icon-facebook {
+    background: rgba(24,119,242,.1);
+    border-color: #1877F2;
+    color: #1877F2;
+}
+
+/* Efecto de escala al pasar el ratón por la tarjeta */
+.contact-card:hover .contact-icon {
+    transform: scale(1.1);
+}
