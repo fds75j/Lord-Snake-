@@ -2700,3 +2700,15 @@ code {
         border-top: 3px solid var(--btc);
     }
 }
+
+@media (max-width: 900px) {
+    /* Arreglo para la lista numerada del hero en móvil */
+    .hero-list {
+        padding-left: 20px !important; /* Devuelve el margen izquierdo a la lista */
+        margin-left: 10px;
+    }
+    
+    .hero-list li {
+        padding-left: 5px; /* Un poco de espacio entre el número y el texto */
+    }
+}
