@@ -2579,3 +2579,58 @@ code {
         font-size: 0.75rem; /* Letra un pelín más pequeña en móvil para que quepa mejor */
     }
 }
+
+/* ============================================================
+   FIX DEFINITIVO: DONACIONES EN MÓVIL
+   ============================================================ */
+
+/* 1. El contenedor general no puede salirse del ancho de la pantalla */
+.donation-wrapper {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Corta cualquier cosa que intente salirse */
+}
+
+/* 2. El panel de información (donde está la wallet) debe encogerse */
+.donation-info {
+    min-width: 0; /* ¡ESTA ES LA CLAVE! Permite que el grid encoja la columna */
+    width: 100%;
+}
+
+/* 3. La caja de la dirección se adapta al 100% */
+.donation-address {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 4. El código de la wallet se rompe sí o sí */
+.donation-code {
+    word-break: break-all !important;
+    white-space: normal !important;
+    display: block;
+    width: 100%;
+}
+
+/* 5. Revisión del modo móvil */
+@media (max-width: 800px) {
+    /* El grid pasa a ser de 1 sola columna (el QR arriba, texto abajo) */
+    .donation-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 15px; /* Reducimos márgenes para que quepa mejor */
+        gap: 30px;
+    }
+    
+    /* El QR no debe ser más ancho que la pantalla */
+    .qr-image {
+        max-width: 200px; 
+        margin: 0 auto;
+    }
+
+    /* Centramos el texto de la wallet y bajamos un poco el tamaño */
+    .donation-code {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+}
