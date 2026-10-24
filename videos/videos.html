@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
 
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -30,7 +32,7 @@
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../estrategias/estrategias.html">Estrategias</a></li>
                 <li><a href="../herramientas/herramientas.html">Herramientas</a></li>
-                <li><a href="../videos/videos.html">Vídeos</a></li>
+                <li><a href="videos.html">Vídeos</a></li>
                 <li><a href="../otrasinversiones/otrasinversiones.html">Otras Inversiones</a></li>
                 <li><a href="../contacto/contacto.html">Contacto</a></li>
                 <li><a href="../sobre-mi/sobre-mi.html">Sobre mí</a></li>
@@ -57,10 +59,13 @@
             
             <div class="video-grid">
 
-                <!-- VÍDEO GOMINING -->
+                <!-- VÍDEO 1: GOMINING -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/3hdaRdRhvuA?si=iFB9cLv2UnTWsSj5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="youtube-thumb" data-id="3hdaRdRhvuA" onclick="playVideo(this)">
+                            <img src="https://img.youtube.com/vi/3hdaRdRhvuA/hqdefault.jpg" alt="Miniatura del vídeo">
+                            <button class="play-btn" aria-label="Reproducir vídeo"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg></button>
+                        </div>
                     </div>
                     <div class="video-info">
                         <h3>Cómo MINAR en la NUBE con Gomining en 2026? Guía COMPLETA</h3>
@@ -69,10 +74,13 @@
                     </div>
                 </div>
 
-                <!-- VÍDEO COINDEPO -->
+                <!-- VÍDEO 2: COINDEPO -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/p7_y30p7NS4?si=ndRwsP6VZZTmfYIj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="youtube-thumb" data-id="p7_y30p7NS4" onclick="playVideo(this)">
+                            <img src="https://img.youtube.com/vi/p7_y30p7NS4/hqdefault.jpg" alt="Miniatura del vídeo">
+                            <button class="play-btn" aria-label="Reproducir vídeo"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg></button>
+                        </div>
                     </div>
                     <div class="video-info">
                         <h3> ⚠️ EL ERROR QUE COMETE TODO EL MUNDO CUANDO EL MERCADO NO SE MUEVE (Coindepo) </h3>
@@ -81,10 +89,13 @@
                     </div>
                 </div>
 
-                <!-- VÍDEO MEXC -->
+                <!-- VÍDEO 3: MEXC -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/glNW9MKd-aA?si=RZ3-bL9UcgxrKlgd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="youtube-thumb" data-id="glNW9MKd-aA" onclick="playVideo(this)">
+                            <img src="https://img.youtube.com/vi/glNW9MKd-aA/hqdefault.jpg" alt="Miniatura del vídeo">
+                            <button class="play-btn" aria-label="Reproducir vídeo"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg></button>
+                        </div>
                     </div>
                     <div class="video-info">
                         <h3> TUTORIAL MEXC ¿Cómo funciona? GUÍA para PRINCIPIANTES 2026 ✅ </h3>
@@ -93,10 +104,13 @@
                     </div>
                 </div>
 
-                <!-- VÍDEO 8LENDS -->
+                <!-- VÍDEO 4: 8LENDS -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/eSkfGHz1PBY?si=l-8OlGSjcAGpb3Ut" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="youtube-thumb" data-id="eSkfGHz1PBY" onclick="playVideo(this)">
+                            <img src="https://img.youtube.com/vi/eSkfGHz1PBY/hqdefault.jpg" alt="Miniatura del vídeo">
+                            <button class="play-btn" aria-label="Reproducir vídeo"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg></button>
+                        </div>
                     </div>
                     <div class="video-info">
                         <h3> Hasta 25% anual con 8lends? Cómo invertir paso a paso </h3>
@@ -105,10 +119,13 @@
                     </div>
                 </div>
 
-                <!-- VÍDEO COLATERALIZANDO -->
+                <!-- VÍDEO 5: COLATERALIZANDO -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/83h0FyqGv80?si=3od91fI_8g-qHBCn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="youtube-thumb" data-id="83h0FyqGv80" onclick="playVideo(this)">
+                            <img src="https://img.youtube.com/vi/83h0FyqGv80/hqdefault.jpg" alt="Miniatura del vídeo">
+                            <button class="play-btn" aria-label="Reproducir vídeo"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg></button>
+                        </div>
                     </div>
                     <div class="video-info">
                         <h3> ¿Cómo comenzar con 1 USDT? CoinDepo x Tivoraj.</h3>
@@ -117,10 +134,13 @@
                     </div>
                 </div>
 
-                <!-- VÍDEO GOMINING2 -->
+                <!-- VÍDEO 6: GOMINING 2 -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/PASIXCZUsbA?si=77BMEKJQabnkTtOK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="youtube-thumb" data-id="PASIXCZUsbA" onclick="playVideo(this)">
+                            <img src="https://img.youtube.com/vi/PASIXCZUsbA/hqdefault.jpg" alt="Miniatura del vídeo">
+                            <button class="play-btn" aria-label="Reproducir vídeo"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg></button>
+                        </div>
                     </div>
                     <div class="video-info">
                         <h3> He generado $134 en Bitcoin en 7 DÍAS 🤯 | Mi estrategia de minería  </h3>
@@ -129,10 +149,13 @@
                     </div>
                 </div>
 
-                <!-- VÍDEO GOMINING3 -->
+                <!-- VÍDEO 7: GOMINING 3 -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/2f8DZGS1m_I?si=j89tF71rLRgPPM9F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="youtube-thumb" data-id="2f8DZGS1m_I" onclick="playVideo(this)">
+                            <img src="https://img.youtube.com/vi/2f8DZGS1m_I/hqdefault.jpg" alt="Miniatura del vídeo">
+                            <button class="play-btn" aria-label="Reproducir vídeo"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg></button>
+                        </div>
                     </div>
                     <div class="video-info">
                         <h3>  GoMining y Binance me PAGAN los GASTOS DIARIOS 🔥 </h3>
@@ -141,10 +164,13 @@
                     </div>
                 </div>
 
-                <!-- VÍDEO COINDEPO2 -->
+                <!-- VÍDEO 8: COINDEPO 2 -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xW65WOP6PLQ?si=MmxqogYFIgvFBd_x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="youtube-thumb" data-id="xW65WOP6PLQ" onclick="playVideo(this)">
+                            <img src="https://img.youtube.com/vi/xW65WOP6PLQ/hqdefault.jpg" alt="Miniatura del vídeo">
+                            <button class="play-btn" aria-label="Reproducir vídeo"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg></button>
+                        </div>
                     </div>
                     <div class="video-info">
                         <h3>  Probé Coindepo 3 meses y esto pasó con mi dinero </h3>
@@ -153,20 +179,23 @@
                     </div>
                 </div>
 
-                 <!-- VÍDEO INDEPENDIENTE -->
+                <!-- VÍDEO 9: INDEPENDIENTE -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/cH1zaTHCY88?si=j-lEl0UvVQlh8sA3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="youtube-thumb" data-id="cH1zaTHCY88" onclick="playVideo(this)">
+                            <img src="https://img.youtube.com/vi/cH1zaTHCY88/hqdefault.jpg" alt="Miniatura del vídeo">
+                            <button class="play-btn" aria-label="Reproducir vídeo"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg></button>
+                        </div>
                     </div>
                     <div class="video-info">
                         <h3> Con BITCOIN Pido PRÉSTAMOS que se pagan SOLOS </h3>
                         <p>Sobre la estrategia de préstamos crypto.</p>
                     </div>
                 </div>
+                
             </div> <!-- Cierre de video-grid -->
         </div> <!-- Cierre de container -->
     </section> <!-- Cierre de la sección de vídeos -->
-
 
     <!-- ==================== CTA FINAL ==================== -->
     <section>
@@ -179,7 +208,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- ==================== FOOTER ==================== -->
     <footer>
