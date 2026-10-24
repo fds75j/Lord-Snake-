@@ -55,3 +55,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// ==================== CARGA DIFERIDA DE VÍDEOS DE YOUTUBE ====================
+function playVideo(element) {
+    // Obtenemos el ID del vídeo del atributo data-id
+    const videoId = element.getAttribute('data-id');
+    
+    // Creamos el iframe real de YouTube
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`);
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', 'true');
+    iframe.setAttribute('referrerPolicy', 'strict-origin-when-cross-origin');
+    // Estilos para que el iframe ocupe el 100% del contenedor
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.position = 'absolute';
+    iframe.style.top = '0';
+    iframe.style.left = '0';
+    
+    // Vaciamos el contenedor (quitamos la imagen y el botón) y ponemos el iframe
+    element.innerHTML = '';
+    element.appendChild(iframe);
+}
